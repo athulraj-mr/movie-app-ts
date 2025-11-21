@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import rating from '../assets/star.svg'
 import type { Movie } from '../types/movie'
 
@@ -6,10 +7,11 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({movie}: MovieCardProps) => {
-    const {title, vote_average, poster_path, release_date, original_language} = movie
+
+    const {id, title, vote_average, poster_path, release_date, original_language} = movie
 
     return (
-        <div>
+        <Link to={`/movie/${id}`} className='cursor-pointer block'>
             <div className='movie-card'>
                 <img 
                     src={poster_path ? 
@@ -30,7 +32,7 @@ const MovieCard = ({movie}: MovieCardProps) => {
                     <p className='year text-white pr-1'>{release_date ? release_date.split('-')[0] : 'N/A'}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
