@@ -7,6 +7,7 @@ import Spinner from './Spinner';
 
 
 const MovieDetails = () => {
+  
   const navigate = useNavigate();
   const { id } = useParams();
   
